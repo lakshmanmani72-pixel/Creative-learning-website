@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name SVG – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .svg-showcase {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .svg-showcase h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .svg-showcase p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .svg-wrap {
+      background: var(--sky-light);
+      border-radius: var(--radius-sm);
+      padding: 30px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#A78BFA,#6EC6F0);">
+  <h1>✏️ Name SVG Art</h1>
+  <p>A creative SVG illustration using gradients and shapes.</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="svg-showcase">
+    <h2>SVG Graphic Demo</h2>
+    <p>This SVG uses a linear gradient fill on an ellipse with embedded text — a great example of inline SVG art!</p>
+
+    <div class="svg-wrap">
+      <svg height="130" width="320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Name displayed in SVG ellipse with gradient">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#6EC6F0" />
+            <stop offset="100%" stop-color="#FF7BAC" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="160" cy="65" rx="155" ry="58" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="42" font-family="Verdana, sans-serif" font-weight="bold" x="50%" y="75" text-anchor="middle">Shetra</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Learning. All Rights Reserved.
+</footer>
+
+</body>
+</html>

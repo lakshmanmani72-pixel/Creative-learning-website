@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Stories – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .story-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 22px;
+      transition: transform 0.22s, box-shadow 0.22s;
+      border-left: 5px solid var(--lavender);
+    }
+    .story-card:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .story-card h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .story-card p {
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .story-card:nth-child(2) { border-left-color: var(--sky); }
+    .story-card:nth-child(3) { border-left-color: var(--candy); }
+    .story-card:nth-child(4) { border-left-color: var(--mint); }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#A78BFA,#FF7BAC);">
+  <h1>📖 Educational Stories</h1>
+  <p>Inspiring and Learning Through Stories</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="story-card">
+    <h2>The Lion and the Mouse</h2>
+    <p>Once upon a time, a lion was sleeping in the forest. A little mouse came upon him unexpectedly, and in her fright, ran across the lion's nose. Waking up, the lion caught the mouse and was about to eat her. But the mouse begged him to let her go, promising that she would help him someday. The lion, amused, released the mouse.</p>
+    <button class="btn btn-sky" onclick="this.textContent = this.textContent === 'Read More' ? 'Lesson: Even small acts of kindness are repaid. 🦁🐭' : 'Read More'">Read More</button>
+  </div>
+
+  <div class="story-card">
+    <h2>The Tortoise and the Hare</h2>
+    <p>A hare once mocked a tortoise for being so slow. The tortoise, tired of the hare's mocking, challenged him to a race. The hare, confident that he would win, took a nap midway through the race. The tortoise, moving slowly but steadily, passed the sleeping hare and won the race.</p>
+    <button class="btn btn-sky" onclick="this.textContent = this.textContent === 'Read More' ? 'Lesson: Slow and steady wins the race. 🐢🐇' : 'Read More'">Read More</button>
+  </div>
+
+  <div class="story-card">
+    <h2>The Boy Who Cried Wolf</h2>
+    <p>A young shepherd boy was watching his flock of sheep when he decided to call out, "Wolf! Wolf!" even though there was no wolf in sight. The villagers rushed to help, but when they found there was no wolf, they were angry. The boy repeated the same trick a few times, but when a real wolf appeared, no one believed his cries for help, and the wolf attacked the sheep.</p>
+    <button class="btn btn-sky" onclick="this.textContent = this.textContent === 'Read More' ? 'Lesson: Honesty is the best policy. 🐺' : 'Read More'">Read More</button>
+  </div>
+
+  <div class="story-card">
+    <h2>The Fox and the Grapes</h2>
+    <p>A hungry fox saw a bunch of grapes hanging from a vine. He jumped to reach them but couldn't. He tried again, but still couldn't reach the grapes. Frustrated, the fox finally walked away, saying, "Those grapes are probably sour anyway." This story teaches us about rationalizing our failures.</p>
+    <button class="btn btn-sky" onclick="this.textContent = this.textContent === 'Read More' ? 'Lesson: Don\\'t dismiss what you cannot achieve. 🦊🍇' : 'Read More'">Read More</button>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Educational Stories. All Rights Reserved.
+</footer>
+
+</body>
+</html>

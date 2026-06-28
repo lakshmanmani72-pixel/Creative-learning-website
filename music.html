@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music and Learning – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .facts-list {
+      list-style: none;
+      padding: 0;
+    }
+    .facts-list li {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .genre-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .genre-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.18s;
+    }
+    .genre-card:hover { transform: translateY(-4px); }
+    .genre-card .g-icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+    .genre-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 6px; }
+    .genre-card p  { color: var(--muted); font-size: 0.88rem; font-weight: 600; }
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.5rem;
+      margin: 32px 0 12px;
+    }
+    .yt-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+    .yt-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF4444;
+      color: white;
+      padding: 11px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: background 0.2s;
+    }
+    .yt-link:hover { background: #CC0000; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#FF7BAC,#A78BFA);">
+  <h1>🎵 Fun and Creative Learning</h1>
+  <p>Learn, Create, and Enjoy the World of Music</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="card">
+    <h2 style="font-family:'Fredoka One',cursive;font-size:1.5rem;margin-bottom:8px;">Welcome to the Musical Adventure!</h2>
+    <p style="color:var(--muted);font-weight:600;">Get ready to explore the exciting world of music through interactive lessons, fun games, and creative activities!</p>
+    <div style="margin-top:18px;">
+      <a class="btn btn-candy" href="https://www.musictheory.net/" target="_blank">🎼 Start Learning Music Theory</a>
+    </div>
+  </div>
+
+  <div class="section-title">🎶 Fun Music Facts</div>
+  <ul class="facts-list">
+    <li>🎼 Beethoven composed music after going deaf!</li>
+    <li>🎸 There are over 1,000 different types of instruments in the world!</li>
+    <li>🧠 Music can improve memory and concentration!</li>
+    <li>🎵 The world's oldest known song is over 3,400 years old!</li>
+  </ul>
+
+  <div class="section-title">🌍 Explore Music Genres</div>
+  <div class="genre-grid">
+    <div class="genre-card">
+      <span class="g-icon">🎷</span>
+      <h3>Jazz</h3>
+      <p>A genre known for improvisation and complex rhythms.</p>
+    </div>
+    <div class="genre-card">
+      <span class="g-icon">🎻</span>
+      <h3>Classical</h3>
+      <p>Structured compositions with grand orchestras.</p>
+    </div>
+    <div class="genre-card">
+      <span class="g-icon">🎸</span>
+      <h3>Rock</h3>
+      <p>Bold and energetic, with electric guitars and drums.</p>
+    </div>
+  </div>
+
+  <div class="section-title">🎧 Listen & Learn</div>
+  <p style="color:var(--muted);font-weight:600;">Explore free music resources on YouTube:</p>
+  <div class="yt-links">
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=jazz+music+for+kids" target="_blank">🎷 Jazz for Kids</a>
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=classical+music+for+children" target="_blank">🎻 Classical Music</a>
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=learn+music+notes+beginners" target="_blank">🎵 Music Notes</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Music Learning. All Rights Reserved.
+</footer>
+
+</body>
+</html>

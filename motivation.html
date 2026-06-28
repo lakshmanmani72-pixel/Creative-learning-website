@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Corner – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .quote-box {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 36px 32px;
+      text-align: center;
+      margin-bottom: 28px;
+      border-top: 5px solid var(--sky);
+    }
+    .quote-text {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .quote-author {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .tip-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tip-item .t-icon { font-size: 1.8rem; }
+    .tip-item span { font-weight: 700; font-size: 0.92rem; color: var(--text); }
+  </style>
+  <script>
+    const quotes = [
+      { q: "The secret of getting ahead is getting started.", a: "Mark Twain" },
+      { q: "It always seems impossible until it's done.", a: "Nelson Mandela" },
+      { q: "Education is the most powerful weapon which you can use to change the world.", a: "Nelson Mandela" },
+      { q: "The more that you read, the more things you will know.", a: "Dr. Seuss" },
+      { q: "Believe you can and you're halfway there.", a: "Theodore Roosevelt" },
+      { q: "Learning is not attained by chance; it must be sought with ardour.", a: "Abigail Adams" },
+      { q: "You don't have to be great to start, but you have to start to be great.", a: "Zig Ziglar" },
+      { q: "Every expert was once a beginner.", a: "Helen Hayes" },
+    ];
+    let current = 0;
+    function showQuote() {
+      const q = quotes[current % quotes.length];
+      document.getElementById('quote').textContent = '\u201C' + q.q + '\u201D';
+      document.getElementById('author').textContent = '\u2014 ' + q.a;
+      current++;
+    }
+    window.onload = showQuote;
+  </script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#4ECBA6,#A78BFA);">
+  <h1>⭐ Motivational Corner</h1>
+  <p>A little inspiration goes a long way.</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="quote-box">
+    <div class="quote-text" id="quote"></div>
+    <div class="quote-author" id="author"></div>
+    <button class="btn btn-mint" onclick="showQuote()" style="margin-top:24px;">✨ Next Quote</button>
+  </div>
+
+  <div style="font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:16px;">Tips to Stay Motivated</div>
+
+  <div class="tips-grid">
+    <div class="tip-item">
+      <span class="t-icon">🎯</span>
+      <span>Set small, achievable goals every day.</span>
+    </div>
+    <div class="tip-item">
+      <span class="t-icon">📅</span>
+      <span>Keep a learning journal to track your progress.</span>
+    </div>
+    <div class="tip-item">
+      <span class="t-icon">🏆</span>
+      <span>Celebrate every small win — they add up!</span>
+    </div>
+    <div class="tip-item">
+      <span class="t-icon">🤝</span>
+      <span>Find a study buddy to stay accountable.</span>
+    </div>
+    <div class="tip-item">
+      <span class="t-icon">😴</span>
+      <span>Rest well — a rested mind learns better.</span>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Learning. All Rights Reserved.
+</footer>
+
+</body>
+</html>

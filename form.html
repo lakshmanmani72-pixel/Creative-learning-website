@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Your Data – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .form-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .form-card h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+    .form-card .sub {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 26px;
+      font-size: 0.93rem;
+    }
+    .success-msg {
+      display: none;
+      background: var(--mint-light);
+      border: 2px solid var(--mint);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+      font-weight: 800;
+      color: #065F46;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#FFD166,#6EC6F0);">
+  <h1>📋 Submit Your Data</h1>
+  <p>Share your details with us using the form below.</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="form-card">
+    <h2>Tell Us About You</h2>
+    <p class="sub">Fill in all the fields below and hit Submit — it only takes a minute!</p>
+
+    <form action="#" method="post" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="femail">Email</label>
+        <input type="email" id="femail" name="email" placeholder="your.email@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="fage">Age</label>
+        <input type="number" id="fage" name="age" placeholder="e.g. 14" min="1" max="120" required>
+      </div>
+      <div class="form-group">
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" name="message" rows="4" placeholder="Write your message here…" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-sky" style="width:100%;justify-content:center;">Submit →</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      ✅ Form submitted successfully! Thank you for sharing.
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Learning. All Rights Reserved.
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Teasers – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .teasers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .teaser {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+    .teaser-num {
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.85rem;
+      color: var(--sky);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .teaser h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .teaser p {
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .answer {
+      display: none;
+      background: var(--mint-light);
+      border-left: 4px solid var(--mint);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-weight: 700;
+      color: #065F46;
+      font-size: 0.92rem;
+    }
+    @media(max-width:600px) { .teasers-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#FFD166,#FF7BAC);">
+  <h1>🧠 Brain Teasers</h1>
+  <p>Test your mind with these fun and challenging puzzles!</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="teasers-grid">
+
+    <div class="teaser">
+      <div class="teaser-num">Teaser #1 · The Riddle</div>
+      <h3>What has keys but can't open locks?</h3>
+      <p>Think about things that have "keys" in more ways than one…</p>
+      <button class="btn btn-candy" onclick="toggleAnswer('a1', this)">Show Answer</button>
+      <div class="answer" id="a1">🎹 A Piano!</div>
+    </div>
+
+    <div class="teaser">
+      <div class="teaser-num">Teaser #2 · The Word Puzzle</div>
+      <h3>What word is spelled incorrectly in every dictionary?</h3>
+      <p>Look very carefully at the question itself…</p>
+      <button class="btn btn-candy" onclick="toggleAnswer('a2', this)">Show Answer</button>
+      <div class="answer" id="a2">✏️ The word "incorrectly"!</div>
+    </div>
+
+    <div class="teaser">
+      <div class="teaser-num">Teaser #3 · The Logic Puzzle</div>
+      <h3>Measure exactly 4 gallons with a 3- and 5-gallon jug.</h3>
+      <p>You have a 3-gallon jug and a 5-gallon jug. No measuring marks. How?</p>
+      <button class="btn btn-candy" onclick="toggleAnswer('a3', this)">Show Answer</button>
+      <div class="answer" id="a3">💧 Fill the 5-gallon jug. Pour into 3-gallon until full (2 gallons left in 5). Empty the 3-gallon. Pour the 2 gallons into it. Fill the 5-gallon again. Pour 1 gallon into the 3-gallon (already has 2). Now 5-gallon has exactly 4 gallons!</div>
+    </div>
+
+    <div class="teaser">
+      <div class="teaser-num">Teaser #4 · The Math Challenge</div>
+      <h3>If two's company and three's a crowd, what are four and five?</h3>
+      <p>This one is simpler than it sounds — think about the numbers directly!</p>
+      <button class="btn btn-candy" onclick="toggleAnswer('a4', this)">Show Answer</button>
+      <div class="answer" id="a4">🔢 Nine! (4 + 5 = 9)</div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Brain Teasers. All Rights Reserved.
+</footer>
+
+<script>
+  function toggleAnswer(id, btn) {
+    const ans = document.getElementById(id);
+    if (ans.style.display === 'block') {
+      ans.style.display = 'none';
+      btn.textContent = 'Show Answer';
+    } else {
+      ans.style.display = 'block';
+      btn.textContent = 'Hide Answer';
+    }
+  }
+</script>
+</body>
+</html>

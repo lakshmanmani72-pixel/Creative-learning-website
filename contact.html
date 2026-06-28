@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Feedback – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .contact-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-card h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .contact-card p {
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 26px;
+    }
+    .success-msg {
+      display: none;
+      background: var(--mint-light);
+      border: 2px solid var(--mint);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+      font-weight: 800;
+      color: #065F46;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#FFD166,#4ECBA6);">
+  <h1>📬 Contact & Feedback</h1>
+  <p>Have a question or suggestion? We'd love to hear from you!</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="contact-card">
+    <h1>Send us a message</h1>
+    <p>Fill out the form below and we'll get back to you soon.</p>
+
+    <form action="#" method="post" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="cname">Your Name</label>
+        <input type="text" id="cname" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="cemail">Email Address</label>
+        <input type="email" id="cemail" placeholder="your.email@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="cfeedback">Your Message / Feedback</label>
+        <textarea id="cfeedback" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-sky" style="width:100%;justify-content:center;">Send Feedback →</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">✅ Thank you for your feedback! We'll be in touch soon.</div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Learning. All Rights Reserved.
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

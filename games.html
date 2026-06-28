@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Through Games – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .games-list { list-style: none; padding: 0; }
+    .game-item {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 24px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.15rem;
+      transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    }
+    .game-item:hover { transform: scale(1.02); background: var(--candy-light); box-shadow: var(--shadow-lg); }
+    .game-item .arrow { font-size: 1.2rem; color: var(--candy); }
+    .game-panel {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 30px;
+      margin-top: 20px;
+      display: none;
+    }
+    .game-panel h2 { font-family: 'Fredoka One', cursive; font-size: 1.5rem; margin-bottom: 8px; }
+    .game-panel p  { color: var(--muted); font-weight: 600; margin-bottom: 20px; }
+    .game-panel input[type="text"],
+    .game-panel input[type="number"] {
+      padding: 10px 14px;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      margin-right: 8px;
+      font-family: 'Nunito', sans-serif;
+    }
+    .result-msg { margin-top: 14px; font-weight: 800; font-size: 1.05rem; }
+    .correct { color: var(--mint); }
+    .wrong   { color: var(--candy); }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#6EC6F0,#4ECBA6);">
+  <h1>🎮 Welcome to the Games Section</h1>
+  <p>Play, challenge yourself, and learn something new!</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <div class="top-bar">
+    <span style="font-family:'Fredoka One',cursive;font-size:1.3rem;">Pick a Game</span>
+    <button class="btn btn-sky" onclick="shuffleGames()">🔀 Shuffle</button>
+  </div>
+
+  <ul class="games-list" id="gamesList"></ul>
+
+  <div class="game-panel" id="gamePanel">
+    <h2 id="gameTitle"></h2>
+    <p  id="gameInstructions"></p>
+    <div id="gameContent"></div>
+    <button class="btn btn-outline" onclick="closeGame()" style="margin-top:18px;">✕ Close Game</button>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Learning. All Rights Reserved.
+</footer>
+
+<script>
+  const games = [
+    {
+      name: "🃏 Memory Match",
+      instructions: "Click the buttons to find matching pairs!",
+      start() {
+        document.getElementById("gameContent").innerHTML =
+          `<button class="btn btn-candy" onclick="alert('Memory Game – Coming Soon! Stay tuned 🎉')">Play Memory Match</button>`;
+      }
+    },
+    {
+      name: "🔤 Word Scramble",
+      instructions: "Unscramble the word shown below!",
+      start() {
+        document.getElementById("gameContent").innerHTML = `
+          <p style="font-weight:800;font-size:1.3rem;margin-bottom:14px;letter-spacing:4px;">TREAPNCI</p>
+          <input type="text" id="wordInput" placeholder="Your answer…">
+          <button class="btn btn-mint" onclick="checkWord()">Check</button>
+          <div class="result-msg" id="wordResult"></div>`;
+      }
+    },
+    {
+      name: "➕ Math Quiz",
+      instructions: "Solve the math question shown below!",
+      start() {
+        const n1 = Math.floor(Math.random() * 10);
+        const n2 = Math.floor(Math.random() * 10);
+        document.getElementById("gameContent").innerHTML = `
+          <p style="font-weight:800;font-size:1.4rem;margin-bottom:14px;">${n1} + ${n2} = ?</p>
+          <input type="number" id="mathAnswer" placeholder="Your answer">
+          <button class="btn btn-sky" onclick="checkMath(${n1 + n2})">Submit</button>
+          <div class="result-msg" id="mathResult"></div>`;
+      }
+    }
+  ];
+
+  function displayGames() {
+    const list = document.getElementById("gamesList");
+    list.innerHTML = "";
+    games.forEach((g, i) => {
+      const li = document.createElement("li");
+      li.className = "game-item";
+      li.innerHTML = `<span>${g.name}</span><span class="arrow">▶</span>`;
+      li.addEventListener("click", () => openGame(i));
+      list.appendChild(li);
+    });
+  }
+
+  function openGame(i) {
+    const panel = document.getElementById("gamePanel");
+    document.getElementById("gameTitle").textContent = games[i].name;
+    document.getElementById("gameInstructions").textContent = games[i].instructions;
+    document.getElementById("gameContent").innerHTML = "";
+    panel.style.display = "block";
+    games[i].start();
+    panel.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function closeGame() {
+    document.getElementById("gamePanel").style.display = "none";
+  }
+
+  function shuffleGames() {
+    for (let i = games.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [games[i], games[j]] = [games[j], games[i]];
+    }
+    displayGames();
+  }
+
+  function checkWord() {
+    const ans = document.getElementById("wordInput").value.toUpperCase().trim();
+    const el = document.getElementById("wordResult");
+    el.textContent = ans === "PRACTICE" ? "✅ Correct! Great job!" : "❌ Not quite — try again!";
+    el.className = "result-msg " + (ans === "PRACTICE" ? "correct" : "wrong");
+  }
+
+  function checkMath(correct) {
+    const val = parseInt(document.getElementById("mathAnswer").value);
+    const el = document.getElementById("mathResult");
+    el.textContent = val === correct ? "✅ Correct! Well done!" : `❌ Not quite. The answer is ${correct}.`;
+    el.className = "result-msg " + (val === correct ? "correct" : "wrong");
+  }
+
+  displayGames();
+</script>
+</body>
+</html>

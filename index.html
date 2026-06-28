@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="sunset.jpg">
+  <title>Fun and Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .hero-home {
+      background: linear-gradient(135deg, #6EC6F0 0%, #FF7BAC 60%, #FFD166 100%);
+      padding: 60px 24px 50px;
+      text-align: center;
+      color: white;
+    }
+    .hero-home img {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .hero-home h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+    }
+    .hero-home p {
+      margin-top: 12px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      opacity: 0.93;
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
+    }
+    .hero-home .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Category grid */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .cat-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.18s, box-shadow 0.18s;
+      display: block;
+    }
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .cat-card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .cat-card h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+    .cat-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .cat-sky    { border-top: 4px solid var(--sky); }
+    .cat-candy  { border-top: 4px solid var(--candy); }
+    .cat-mint   { border-top: 4px solid var(--mint); }
+    .cat-sun    { border-top: 4px solid var(--sun); }
+    .cat-lav    { border-top: 4px solid var(--lavender); }
+
+    /* Why section */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .why-item {
+      background: var(--sky-light);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+    }
+    .why-item .w-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+    .why-item h4 { font-weight: 800; font-size: 0.95rem; color: var(--text); }
+    .why-item p  { font-size: 0.83rem; color: var(--muted); margin-top: 4px; }
+
+    .section-label {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .notice {
+      background: var(--candy-light);
+      border: 2px dashed var(--candy);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--candy);
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Profile</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="join.html">Join Us</a></li>
+  </ul>
+</nav>
+
+<div class="hero-home">
+  <img src="sunset.jpg" alt="Fun Learning Logo">
+  <h1>Fun and Creative Learning!</h1>
+  <p>Explore exciting activities, creative challenges, and fun ways to learn new things.</p>
+  <div class="hero-actions">
+    <a href="science.html" class="btn btn-sun">🚀 Get Started</a>
+    <a href="login.html" class="btn btn-outline" style="background:rgba(255,255,255,0.2);color:white;border-color:white;">Login</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="section-label">Explore our Categories</div>
+  <div class="section-sub">Pick any topic to begin your learning adventure!</div>
+
+  <div class="categories">
+    <a href="science.html" class="cat-card cat-sky">
+      <span class="icon">🧪</span>
+      <h3>DIY Science Experiments</h3>
+      <p>Hands-on experiments at home</p>
+    </a>
+    <a href="art.html" class="cat-card cat-candy">
+      <span class="icon">🎨</span>
+      <h3>Creative Arts & Crafts</h3>
+      <p>Dive into the world of art</p>
+    </a>
+    <a href="coding.html" class="cat-card cat-mint">
+      <span class="icon">💻</span>
+      <h3>Fun with Coding</h3>
+      <p>Start your coding journey</p>
+    </a>
+    <a href="puzzles.html" class="cat-card cat-sun">
+      <span class="icon">🧠</span>
+      <h3>Brain Teasers</h3>
+      <p>Challenge your mind with puzzles</p>
+    </a>
+    <a href="stories.html" class="cat-card cat-lav">
+      <span class="icon">📖</span>
+      <h3>Educational Stories</h3>
+      <p>Learn through timeless tales</p>
+    </a>
+    <a href="music.html" class="cat-card cat-sky">
+      <span class="icon">🎵</span>
+      <h3>Music and Learning</h3>
+      <p>Explore the world of music</p>
+    </a>
+    <a href="games.html" class="cat-card cat-candy">
+      <span class="icon">🎮</span>
+      <h3>Learning Through Games</h3>
+      <p>Play and learn together</p>
+    </a>
+    <a href="motivation.html" class="cat-card cat-mint">
+      <span class="icon">⭐</span>
+      <h3>Motivational Corner</h3>
+      <p>Daily inspiration and tips</p>
+    </a>
+    <a href="contact.html" class="cat-card cat-sun">
+      <span class="icon">📬</span>
+      <h3>Contact & Feedback</h3>
+      <p>Share your thoughts with us</p>
+    </a>
+  </div>
+
+  <div class="notice">📣 CONTACT US IN CASE OF ANY QUERIES</div>
+
+  <div class="section-label" style="margin-top:36px;">Why choose Fun and Creative Learning?</div>
+  <div class="section-sub">We make education something to look forward to.</div>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <span class="w-icon">🤲</span>
+      <h4>Hands-On Activities</h4>
+      <p>Learn by doing, not just reading.</p>
+    </div>
+    <div class="why-item">
+      <span class="w-icon">🎮</span>
+      <h4>Interactive Games</h4>
+      <p>Play your way through new skills.</p>
+    </div>
+    <div class="why-item">
+      <span class="w-icon">📚</span>
+      <h4>Engaging Stories</h4>
+      <p>Classic tales with timeless lessons.</p>
+    </div>
+    <div class="why-item">
+      <span class="w-icon">🌈</span>
+      <h4>Something for Everyone</h4>
+      <p>Science, art, puzzles and more.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun and Creative Learning. All Rights Reserved.
+</footer>
+
+</body>
+</html>

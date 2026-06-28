@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Meet Form – Fun & Creative Learning</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .alumni-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .alumni-card h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.35rem;
+      margin: 28px 0 16px;
+      color: var(--sky);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alumni-card h2:first-of-type { margin-top: 0; }
+    .section-divider {
+      border: none;
+      border-top: 2px dashed #E2E8F0;
+      margin: 24px 0;
+    }
+    .radio-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 8px; }
+    .radio-row label { display: flex; align-items: center; gap: 6px; font-weight: 700; cursor: pointer; }
+    .btn-row { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .success-msg {
+      display: none;
+      background: var(--mint-light);
+      border: 2px solid var(--mint);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+      font-weight: 800;
+      color: #065F46;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="index.html">🌟 Fun Learning</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="join.html">Join Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="background:linear-gradient(135deg,#6EC6F0,#4ECBA6);">
+  <h1>🎓 Alumni Meet Registration</h1>
+  <p>Fill in your details to join the alumni reunion!</p>
+</div>
+
+<div class="page-wrap">
+
+  <a href="join.html" class="back-link">← Back to Join Us</a>
+
+  <div class="alumni-card">
+    <form action="#" method="post" onsubmit="handleSubmit(event)">
+
+      <h2>👤 Personal Details</h2>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="Enter your first name" required>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob">
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-row">
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Others"> Others</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="alumEmail">Email</label>
+        <input type="email" id="alumEmail" placeholder="your.email@gmail.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="1234567890">
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>📚 Academic Details</h2>
+      <div class="form-group">
+        <label for="gradYear">Year of Graduation</label>
+        <input type="text" id="gradYear" placeholder="e.g. 2024">
+      </div>
+      <div class="form-group">
+        <label for="subject">Favourite Subject</label>
+        <select id="subject">
+          <option>Maths</option>
+          <option>Science</option>
+          <option>English</option>
+          <option>Tamil</option>
+          <option>Social Science</option>
+        </select>
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>🌍 Current Information</h2>
+      <div class="form-group">
+        <label for="education">Higher Education</label>
+        <input type="text" id="education" placeholder="e.g. M.E / MBA">
+      </div>
+      <div class="form-group">
+        <label for="city">Current City</label>
+        <input type="text" id="city" placeholder="e.g. Chennai">
+      </div>
+      <div class="form-group">
+        <label for="memory">Cherished Memory</label>
+        <input type="text" id="memory" placeholder="Share a favourite memory from school">
+      </div>
+      <div class="form-group">
+        <label for="photo">Upload a Photo</label>
+        <input type="file" id="photo" style="padding:8px 0;">
+      </div>
+
+      <div class="btn-row">
+        <button type="reset" class="btn btn-outline">↺ Reset</button>
+        <button type="submit" class="btn btn-sky">Submit →</button>
+      </div>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      ✅ Thank you! Your alumni registration has been submitted successfully.
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  &copy; 2025 Fun & Creative Learning. All Rights Reserved.
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+    e.target.reset();
+    document.getElementById("successMsg").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+</body>
+</html>
